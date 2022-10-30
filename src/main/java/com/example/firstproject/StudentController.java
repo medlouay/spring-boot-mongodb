@@ -1,9 +1,7 @@
 package com.example.firstproject;
 
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,9 +18,14 @@ public class StudentController {
     }
 
     @GetMapping("student/{id}")
-    public Optional<Student> fetchById(String id){
+    public Optional<Student> fetchById(@PathVariable String id){
         return studentService.getById(id);
     }
 
+    @PostMapping("/students")
+    public Student save(@RequestBody Student newStudent){
+        return studentService.saveStudents(newStudent);
+
+    }
 
 }

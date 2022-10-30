@@ -19,4 +19,10 @@ public class StudentService {
 
         return studentRepository.findById(id);
     }
+
+    public Student saveStudents(Student student){
+
+        return  studentRepository.save(student);
+
+    }
 }
