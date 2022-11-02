@@ -25,4 +25,24 @@ public class StudentService {
         return  studentRepository.save(student);
 
     }
+
+    public void deleteStudent(String id){
+         studentRepository.deleteById(id);
+
+    }
+
+    public Optional<Student> updateStudent(Student student, String id){
+        return studentRepository.findById(id)
+                .map(student1->{
+                    student1.setFirstname(student.getFirstname());
+                    student1.setLastname(student.getLastname());
+                    student1.setAddress(student.getAddress());
+                    student1.setEmail(student.getEmail());
+                    student1.setGender(student.getGender());
+                    return studentRepository.save(student1);
+                });
+    }
+
+
+
 }

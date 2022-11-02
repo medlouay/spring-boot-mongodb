@@ -11,21 +11,31 @@ import java.util.Optional;
 @AllArgsConstructor
 public class StudentController {
     private final StudentService studentService;
-    @GetMapping
+    @GetMapping("/allStudents")
     public List<Student> fetchAllStudents(){
         return studentService.getAllStudents();
 
     }
 
-    @GetMapping("student/{id}")
+    @GetMapping("/getstudentById/{id}")
     public Optional<Student> fetchById(@PathVariable String id){
         return studentService.getById(id);
     }
 
-    @PostMapping("/students")
+    @PostMapping("/addStudent")
     public Student save(@RequestBody Student newStudent){
         return studentService.saveStudents(newStudent);
 
+    }
+
+    @DeleteMapping("/deleteStudent/{id}")
+    void deleteById(@PathVariable String id) {
+        studentService.deleteStudent(id);
+    }
+
+    @PutMapping("/updateStudent/{id}")
+   public Optional<Student> updatestudent(@RequestBody Student student,@PathVariable String id){
+        return studentService.updateStudent(student,id);
     }
 
 }

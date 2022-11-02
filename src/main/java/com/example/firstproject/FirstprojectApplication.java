@@ -32,7 +32,7 @@ public class FirstprojectApplication {
 					"2050"
 			);
 			List<String> lou = Arrays.asList("math");
-			String email="samar.lahmar68@gmail.com";
+			String email="samar.68@gmail.com";
 			Student student = new Student(
 					"samar",
 					"lahmar",
