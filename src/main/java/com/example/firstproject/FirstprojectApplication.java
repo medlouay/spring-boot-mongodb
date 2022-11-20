@@ -1,29 +1,20 @@
 package com.example.firstproject;
 
-import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 
-
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
 
 
 @SpringBootApplication
 public class FirstprojectApplication {
-
+	// swagger http://localhost:8080/swagger-ui/index.html#/
 	public static void main(String[] args) {
 		SpringApplication.run(FirstprojectApplication.class, args);
 	}
 
 
-	@Bean
+	/*@Bean
 	CommandLineRunner runner(StudentRepository repository, MongoTemplate mongoTemplate){
 		return args -> {
 			Address address =new Address(
@@ -54,6 +45,7 @@ public class FirstprojectApplication {
 				repository.insert(student);
 			});
 
+
 		};
 
 	}
@@ -73,6 +65,6 @@ public class FirstprojectApplication {
 		}else {
 			System.out.println(student + "already exist");
 		}
-	}
+	}*/
 
 }
